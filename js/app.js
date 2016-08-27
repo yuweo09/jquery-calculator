@@ -7,14 +7,14 @@ var $numbers = $('span').not('.operator').on('click',function appendToScreen(eve
     if(check){  $screen.get(0).innerHTML= "";}
     var $tes = $(event.target);
     //adds a space at the end for the array split method
-    $screen.val($screen.val()+$tes.text()+' ');
+    $screen.val($screen.val()+$tes.text());
 });
 //opperand
 var $opperand = $('.operator').on('click',function appendToScreen(event) {
 var $test = $(event.target);
 if($test.get(0).innerHTML === '=' || $test.get(0).innerHTML === 'C'){
 }else{
-    $screen.val($screen.val()+$test.text()+' ');
+    $screen.val($screen.val()+' '+$test.text()+' ');
 }
 check=false;
 });
