@@ -1,7 +1,10 @@
+//checks for complete eval
+var check= false;
 //screen
 var $screen = $('#screen');
 //number not opperand
 var $numbers = $('span').not('.operator').on('click',function appendToScreen(event) {
+    if(check){  $screen.get(0).innerHTML= "";}
     var $tes = $(event.target);
     $screen.append($tes.text());
 });
@@ -19,6 +22,7 @@ if($test.get(0).innerHTML === '=' || $test.get(0).innerHTML === 'C'){
 //equals
 var $equals = $('#equals').click(function evaluate(event) {
 $screen.append('='+eval($screen.text()));
+check = true;
 });
 //clear
 var $clear = $('#clear').click(function clear(event) {
